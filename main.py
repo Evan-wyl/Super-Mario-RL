@@ -26,7 +26,7 @@ import sys
 sys.path.append("..")
 from agent.ddqn import Mario
 from metricLogger import MetricLogger
-
+from params.CONSTANT import EPISODES, AGENT
 
 class SkipFrame(gym.Wrapper):
     def __init__(self, env, skip):
@@ -103,15 +103,15 @@ if __name__ == '__main__':
     print(f"Using CUDA:  {use_cuda}")
     print()
 
-    save_dir = Path("checkpoints") / datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S")
+    save_dir = Path(f"checkpoints/{AGENT}") / datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S")
     save_dir.mkdir(parents=True)
 
     mario = Mario(state_dim=(4, 84, 84), action_dim=env.action_space.n, save_dir=save_dir)
 
     logger = MetricLogger(save_dir)
 
-    episodes = 10
-    for e in range(episodes):
+    # episodes = 10
+    for e in range(EPISODES):
         state = env.reset()
 
         while True:
@@ -134,6 +134,6 @@ if __name__ == '__main__':
 
         logger.log_episode()
 
-        if e % 20 == 0:
+        if e % 5 == 0:
             logger.record(episode=e, epsilon=mario.exploration_rate, step=mario.curr_step)
 
