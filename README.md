@@ -1,5 +1,5 @@
 # Super-Mario-RL
-Super-Mario is a 2D and 3D platform game series. We use the [Super-Mario-Bros](https://github.com/Kautenja/gym-super-mario-bros) as an enviroment of training RL agent.
+Super-Mario is a 2D and 3D platform game series. We use the [Super-Mario-Bros](https://github.com/Kautenja/gym-super-mario-bros) as an enviroment of training RL agents. Deep Q Learning and its derivative algorithms have been implemented, such as [DQN]()|Double DQN|Dueling Network.
 
 ## Environments
 - Python 3.7
