@@ -2,7 +2,9 @@
 The agent of RL Algorithms which have a better performance on Super-Mario.
 
 ## Environments
-
+- Python 3.7
+- Pytorch 1.7
+- OpenAI Gym Environment for Super Mario Bros: https://github.com/Kautenja/gym-super-mario-bros
 
 ## Training Results of Different Agent
 
