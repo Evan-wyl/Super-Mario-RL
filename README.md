@@ -1,9 +1,9 @@
 # Super-Mario-RL
-The agent of RL Algorithms which have a better performance on Super-Mario.
-
+Super-Mario is a 2D and 3D platform game series.We use the [Super-Mario-Bros](https://github.com/Kautenja/gym-super-mario-bros) as a platform of training a RL agent.
 ## Environments
 - Python 3.7
 - Pytorch 1.7
+- GPU Memory 8G
 - OpenAI Gym Environment for Super Mario Bros: https://github.com/Kautenja/gym-super-mario-bros
 
 ## Training Result of Different Agents
