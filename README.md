@@ -5,7 +5,6 @@ Super-Mario is a 2D and 3D platform game series. We use the [Super-Mario-Bros](h
 - Python 3.7
 - Pytorch 1.7
 - GPU Memory 8G
-- OpenAI Gym Environment for Super Mario Bros: https://github.com/Kautenja/gym-super-mario-bros
 
 ## Training Result of Different Agents
 
