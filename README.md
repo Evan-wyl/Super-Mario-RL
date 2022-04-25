@@ -1,6 +1,9 @@
 # Super-Mario-RL
-The agent of RL Algorithm which have a better performance on Super-Mario.
+The agent of RL Algorithms which have a better performance on Super-Mario.
 
+## Environments
+
+## Training Results of Different Agent
 
 ## Reference
 1. [TRAIN A MARIO-PLAYING RL AGENT](https://pytorch.org/tutorials/intermediate/mario_rl_tutorial.html)
