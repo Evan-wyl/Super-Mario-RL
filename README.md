@@ -13,7 +13,7 @@ Super-Mario is a 2D and 3D platform game series. We use the [Super-Mario-Bros](h
 ![Reward Curve](imgs/DDQN/reward_plot.jpg)
 
 #### Loss Curve
-
+![Reward Curve](imgs/DDQN/loss_plot.jpg)
 
 ## Reference
 1. [TRAIN A MARIO-PLAYING RL AGENT](https://pytorch.org/tutorials/intermediate/mario_rl_tutorial.html)
