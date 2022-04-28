@@ -10,7 +10,7 @@ Super-Mario is a 2D and 3D platform game series. We use the [Super-Mario-Bros](h
 
 ### Double-DQN
 #### Reward Curve
-![Reward Curve](imgs/DDQN/reward_plot.jpg#pic_center 160x160)
+![Reward Curve](imgs/DDQN/reward_plot.jpg#pic_center)
 
 #### Loss Curve
 ![Reward Curve](imgs/DDQN/loss_plot.jpg#pic_center)
