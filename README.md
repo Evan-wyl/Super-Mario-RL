@@ -10,10 +10,10 @@ Super-Mario is a 2D and 3D platform game series. We use the [Super-Mario-Bros](h
 
 ### Double-DQN
 #### Reward Curve
-<div align="center"><img src="https://github.com/Evan-wyl/Super-Mario-RL/blob/master/imgs/DDQN/reward_plot.jpg" width="500" height="400"></div>
+<div align="left"><img src="https://github.com/Evan-wyl/Super-Mario-RL/blob/master/imgs/DDQN/reward_plot.jpg" width="500" height="400"></div>
 
 #### Loss Curve
-<img src="https://github.com/Evan-wyl/Super-Mario-RL/blob/master/imgs/DDQN/loss_plot.jpg" width="500" height="400">
+<div align="left"><img src="https://github.com/Evan-wyl/Super-Mario-RL/blob/master/imgs/DDQN/loss_plot.jpg" width="500" height="400"></div>
 
 ## Reference
 1. [TRAIN A MARIO-PLAYING RL AGENT](https://pytorch.org/tutorials/intermediate/mario_rl_tutorial.html)
