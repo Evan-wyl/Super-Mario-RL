@@ -1,5 +1,5 @@
 # -*- codeing = utf-8 -*-
-# @Time : 2022/4/29 22:35
+# @Time : 2022/4/30 16:18
 # @Author : Evan_wyl
 # @File : dueling_DDQN.py
 
@@ -50,19 +50,19 @@ class DuelingNetWork(nn.Module):
 
     def forward(self, input):
         x = self.cov1(input)
-        x = nn.ReLU(x)
+        x = nn.ReLU()(x)
         x = self.cov2(x)
-        x = nn.ReLU(x)
+        x = nn.ReLU()(x)
         x = self.cov3(x)
-        x = nn.ReLU(x)
-        x = x.Flatten()
+        x = nn.ReLU()(x)
+        x = nn.Flatten()(x)
 
         a = self.l0_a(x)
-        a = nn.ReLU(a)
+        a = nn.ReLU()(a)
         a = self.l1_a(a)
 
         v = self.l0_v(x)
-        v = nn.ReLU(v)
+        v = nn.ReLU()(v)
         v = self.l1_v(v)
         return a + v - a.mean()
 
@@ -124,7 +124,7 @@ class Mario(object):
         return action_idx
 
     def cache(self, state, next_state, action, reward, done):
-        state = state.__array__
+        state = state.__array__()
         next_state = next_state.__array__()
 
         if self.use_cuda:
@@ -144,7 +144,7 @@ class Mario(object):
     def recall(self):
         batch = random.sample(self.memory, self.batch_size)
         state, next_state, action, reward, done = map(torch.stack, zip(*batch))
-        return state, next_state, action.unsqueeze(), reward.unsqueeze(), done.unsqueeze()
+        return state, next_state, action.squeeze(), reward.squeeze(), done.squeeze()
 
     def td_estimate(self, state, action):
         current_Q = self.net(state)[
