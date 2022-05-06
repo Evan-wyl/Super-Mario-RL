@@ -79,7 +79,7 @@ class Mario(object):
         self.exploration_rate = EXPLORATION_RATE
         self.exploration_rate_decay = EXPLORATION_RATE_DECAY
         self.exploration_rate_min = EXPLORATION_RATE_MIN
-        self.curr_step = 0
+        self.cur_step = 0
 
         self.save_every = 5e5
 
@@ -111,7 +111,7 @@ class Mario(object):
         self.exploration_rate *= self.exploration_rate_decay
         self.exploration_rate = max(self.exploration_rate_min, self.exploration_rate)
 
-        self.curr_step += 1
+        self.cur_step += 1
         return action_idx
 
     def cache(self, state, next_state, action, reward,  done):
@@ -166,23 +166,23 @@ class Mario(object):
 
     def save(self):
         save_path = (
-            self.save_dir / f"mario_net_{int(self.curr_step // self.save_every)}.chkpt"
+            self.save_dir / f"mario_net_{int(self.cur_step // self.save_every)}.chkpt"
         )
         torch.save(
             dict(model=self.net.state_dict(), exploration_rate = self.exploration_rate), save_path)
-        print(f"MarioNet saved to {save_path} at step {self.curr_step}")
+        print(f"MarioNet saved to {save_path} at step {self.cur_step}")
 
     def learn(self):
-        if self.curr_step % self.sync_every == 0:
+        if self.cur_step % self.sync_every == 0:
             self.sync_Q_target()
 
-        if self.curr_step % self.save_every == 0:
+        if self.cur_step % self.save_every == 0:
             self.save()
 
-        if self.curr_step < self.burnin:
+        if self.cur_step < self.burnin:
             return None, None
 
-        if self.curr_step % self.learn_every != 0:
+        if self.cur_step % self.learn_every != 0:
             return None, None
 
         state, next_state, action, reward, done = self.recall()
