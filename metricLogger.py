@@ -102,7 +102,7 @@ class MetricLogger(object):
 
         for metric in ["ep_rewards", "ep_lengths", "ep_avg_losses", "ep_avg_qs"]:
             plt.plot(getattr(self, f"moving_avg_{metric}"))
-            plt.grid(alpha=0.2)
+            plt.grid(alpha=0.3)
             plt.savefig(getattr(self, f"{metric}_plot"))
             plt.clf()
 

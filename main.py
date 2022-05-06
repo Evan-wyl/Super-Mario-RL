@@ -25,6 +25,9 @@ from gym_super_mario_bros.actions import COMPLEX_MOVEMENT
 import sys
 sys.path.append("..")
 from agent.ddqn import Mario
+# from agent.dqn import Mario
+# from agent.dueling_DDQN import Mario
+# from agent.dueling_DQN import Mario
 from metricLogger import MetricLogger
 from params.CONSTANT import EPISODES, AGENT
 
@@ -134,6 +137,6 @@ if __name__ == '__main__':
 
         logger.log_episode()
 
-        if e % 5 == 0:
-            logger.record(episode=e, epsilon=mario.exploration_rate, step=mario.curr_step)
+        if e % 20 == 0:
+            logger.record(episode=e, epsilon=mario.exploration_rate, step=mario.cur_step)
 
